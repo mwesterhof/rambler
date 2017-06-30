@@ -62,7 +62,7 @@ class App extends Component {
                     <h1>shit</h1>
                     <ul>
                     {this.state.errors.map(error => {
-                        return <li>{error}</li>
+                        return <li>{error.message}</li>
                     })}
                     </ul>
                 </div>
