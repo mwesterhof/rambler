@@ -6,6 +6,7 @@ from .serializers import MessageSerializer, RoomSerializer
 
 
 class QueryParamModelViewSet(viewsets.ModelViewSet):
+    permission_classes = (IsAuthenticated,)
     filter_params = []
 
     def get_queryset(self):
