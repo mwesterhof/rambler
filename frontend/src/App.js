@@ -21,10 +21,11 @@ class App extends Component {
     }
 
     componentDidMount() {
-        this.clockId = setInterval(this.tick, settings.timerInterval)
+        // this.clockId = setInterval(this.tick, settings.timerInterval)
+        setTimeout(this.tick, 5000)
     }
 
-    componentWillUnmount() {
+    _componentWillUnmount() {
         clearInterval(this.clockId)
     }
 
@@ -48,7 +49,8 @@ class App extends Component {
                             errors: [...state.errors, error]
                         }
                     })
-                }
+                },
+                this.state.token
             )
         }
     }
@@ -84,6 +86,7 @@ class App extends Component {
         return (
             <div className="App">
                 <h2>App</h2>
+                <p>token: {this.state.token}</p>
                 { content }
             </div>
         )
